@@ -1,0 +1,79 @@
+[package]
+authors = ['MXC Foundation gGmbH <https://t.me/mxcfoundation>', 'Luke Schoen <luke@mxc.org>', 'Ilya Beregovskiy <ilya@mxc.org>']
+build = 'build.rs'
+edition = '2018'
+name = 'datahighway'
+version = '3.0.5'
+
+[[bin]]
+name = 'datahighway'
+
+[package.metadata.docs.rs]
+targets = ['x86_64-unknown-linux-gnu']
+
+[build-dependencies]
+substrate-build-script-utils = '3.0.0'
+vergen = '3.0.4'
+
+[dependencies]
+futures = { version = '0.3.9', features = ['compat'] }
+jsonrpc-core = '15.0.0'
+structopt = '0.3.8'
+hex-literal = '0.3.1'
+
+# local node-specific dependencies
+datahighway-runtime = { version = '3.0.5', path = '../runtime' }
+
+# Substrate dependencies
+frame-benchmarking = '3.1.0'
+frame-benchmarking-cli = '3.0.0'
+module-primitives = { version = '3.0.5', default-features = false, path = '../pallets/primitives' }
+pallet-authority-discovery = '3.0.0'
+pallet-democracy = '3.0.0'
+pallet-im-online = '3.0.0'
+pallet-transaction-payment-rpc = '3.0.0'
+sc-authority-discovery = '0.9.0'
+sc-basic-authorship = '0.9.0'
+sc-cli = { features = ['wasmtime'], version = '0.9.0' }
+sc-client-api = '3.0.0'
+sc-consensus-epochs = { version = '0.9.0' }
+sc-chain-spec = { version = '3.0.0' }
+sc-keystore = { version = '3.0.0' }
+sc-consensus = '0.9.0'
+sc-consensus-aura = '0.9.0'
+sc-consensus-slots = '0.9.0'
+sc-executor = { features = ['wasmtime'], version = '0.9.0' }
+sc-rpc = '3.0.0'
+sc-rpc-api = '0.9.0'
+sc-service = {  version = '0.9.0', default-features = false, features = ['wasmtime'] }
+sc-sync-state-rpc = '0.9.0'
+sc-transaction-pool = '3.0.0'
+sp-api = '3.0.0'
+sp-authority-discovery = '3.0.0'
+sp-block-builder = '3.0.0'
+sp-blockchain = '3.0.0'
+sp-consensus = '0.9.0'
+sp-consensus-aura = '0.9.0'
+sp-core = '3.0.0'
+sc-finality-grandpa = '0.9.0'
+sc-finality-grandpa-rpc = '0.9.0'
+sp-finality-grandpa = '3.0.0'
+sp-inherents = '3.0.0'
+sp-keystore = '0.9.0'
+sc-network = '0.9.0'
+sp-runtime = '3.0.0'
+sp-transaction-pool = '3.0.0'
+sp-consensus-babe = { version = '0.9.0' }
+sc-consensus-babe = { version = '0.9.0' }
+sc-consensus-babe-rpc = { version = '0.9.0' }
+sc-telemetry = { version = '3.0.0' }
+substrate-frame-rpc-system = '3.0.0'
+
+serde_json = '1.0.41'
+serde = { version = '1.0.102', features = ['derive'] }
+
+[dev-dependencies]
+# futures = '0.3.9'
+
+[features]
+default = []
